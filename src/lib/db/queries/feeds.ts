@@ -1,6 +1,6 @@
-import { db } from "..";
-import { feeds } from "../schema";
-import { firstOrUndefined } from "./utils";
+import {db} from "..";
+import {feeds} from "../schema";
+import {firstOrUndefined} from "./utils";
 
 export async function createFeed(
     feedName: string,
@@ -21,4 +21,8 @@ export async function createFeed(
 
 export async function deleteFeeds() {
     await db.delete(feeds);
+}
+
+export async function getFeeds() {
+    return db.select().from(feeds);
 }
