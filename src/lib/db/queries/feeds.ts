@@ -18,3 +18,7 @@ export async function createFeed(
 
     return firstOrUndefined(result);
 }
+
+export async function deleteFeeds() {
+    await db.delete(feeds);
+}
